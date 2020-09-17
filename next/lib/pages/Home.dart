@@ -7,9 +7,11 @@ class HomePage extends StatefulWidget {
 
   class _HomePageState extends State<HomePage> {
     Color _corPrimary = Color.fromRGBO(93, 188, 210, 1); 
+    double _saldo = 0;
 
   @override
   Widget build(BuildContext context) {
+    this._saldo = 1000.00;
     return Scaffold(
       appBar: AppBar(
         backgroundColor: _corPrimary,
@@ -21,7 +23,7 @@ class HomePage extends StatefulWidget {
             Text('next', style: TextStyle(color: Colors.black)),
           ],
         ),
-      ),
+      ), 
       body: Container(
         color: _corPrimary,
         child: Column(
@@ -51,9 +53,32 @@ class HomePage extends StatefulWidget {
                   Container(
                     child: Icon(Icons.arrow_forward_ios)
                   )
-                  ],
+                ],
               ),
-            )
+            ),
+            Container(
+              decoration: BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(width: .5),
+                ),
+              ),
+              padding: EdgeInsets.all(20),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('SALDO DE CONTA CORRENTE', style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold)),
+                      Text('R\$ $_saldo', style: TextStyle(fontSize: 25, fontWeight: FontWeight.w800))
+                    ],
+                  ),
+                  Container(
+                    child: Icon(Icons.visibility_off)
+                  )
+                ],
+              ),
+            ),
           ],
         ),
       )
