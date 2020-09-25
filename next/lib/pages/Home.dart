@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:next/components/actions.dart';
 import 'package:next/utils/constants.dart';
 import 'package:next/widgets/BlocoWidget.dart';
-import 'package:next/widgets/ItemsWidget.dart';
+import 'package:next/widgets/imageWidget.dart';
 import 'package:next/widgets/myAppBar.dart';
 
 class HomePage extends StatefulWidget {
@@ -28,10 +29,11 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   children: [
                     Container(
-                      child: FlutterLogo(size: 50),
+                      // User Image
+                      child: ImageWidget(),
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 25),
+                      margin: EdgeInsets.only(left: 20),
                       child: Text('ADRIAN BUENO',  style: TextStyle(
                         fontWeight: FontWeight.bold, fontSize: 20))
                     ),
@@ -58,47 +60,7 @@ class _HomePageState extends State<HomePage> {
                 )
               ],
             ),
-
-            ItemsWidget(
-              col1: [
-                Icons.attach_money,
-                'SALDO E ESTRATO'
-              ],
-              col2: [
-                Icons.compare_arrows,
-                'TRANSFERENCIAS'
-              ],
-            ),
-            ItemsWidget(
-              col1: [
-                Icons.calendar_view_day,
-                'PAGAR CONTA'
-              ],
-              col2: [
-                Icons.phone_android,
-                'RECARGA CELULAR'
-              ],
-            ),
-            ItemsWidget(
-              col1: [
-                Icons.credit_card,
-                'CARTÃO'
-              ],
-              col2: [
-                Icons.star_border,
-                'MIMOS'
-              ],
-            ),
-            ItemsWidget(
-              col1: [
-                Icons.favorite_border,
-                'OBJETIVOS'
-              ],
-              col2: [
-                Icons.hourglass_empty,
-                'FLOW'
-              ],
-            ),
+            ActionsWidget(),
           ],
         ),
         )

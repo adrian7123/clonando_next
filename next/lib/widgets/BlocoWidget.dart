@@ -18,7 +18,7 @@ class BlocoWidget extends StatefulWidget {
           bottom: BorderSide(width: .5),
         ),
       ),
-      padding: EdgeInsets.all(15),
+      padding: EdgeInsets.all(25),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: widget.children

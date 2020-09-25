@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:next/utils/constants.dart';
 
-
-
 class ItemsWidget extends StatefulWidget {
-  /// um icone e um texto 
+  /// um icone e um texto esquerda
   final List col1;
   
-  /// um icone e um texto 
+  /// um icone e um texto direita
   final List col2;
 
   ItemsWidget({this.col1, this.col2});
@@ -58,7 +56,7 @@ class LinhaVertical extends StatelessWidget {
 }
 
 class Item extends StatelessWidget {
-  final IconData icon;
+  final dynamic icon;
   final String text;
 
   Item({this.icon, this.text});
@@ -74,11 +72,12 @@ class Item extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
+          Container(
             padding: EdgeInsets.all(10),
-            child: Icon(this.icon)
+            height: 85,
+            child: this.icon.runtimeType == Image ? this.icon : Icon(this.icon, size: 50, )
           ),
-          Text(this.text),
+          Text(this.text), 
         ]
       )
     );
